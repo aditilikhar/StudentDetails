@@ -1,0 +1,56 @@
+<html>
+    <style type='text/css'>
+        .main{
+        
+         display:flex;
+         justify-content:center;
+         align-items:center;
+        }
+        .sub{
+ background-color:#FFF;
+ width:90%;
+ padding:3%;
+ margin-top:5%;
+ 
+  
+}
+    </style>    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('#example').DataTable();
+     } );
+    </script>
+     <div class="container main">
+         <div class="sub">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <caption><h2>All students data</h2></caption>
+        <tr>
+            <th>Student Image</th>
+            <th>Student</th>
+            <th>Birthdate/<br>Gender</th>
+            <th>Address</th>
+            <th>Contact Details</th>
+        </tr>
+        <tr>
+            <% data.map((item,index)=>{
+                var date=new Date(item.dob)
+                var bd=date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear()
+
+            %>
+            <td><img src='/images/<%= item.picture %>' width=100 height=100></td>
+           <td>ID: <%= item.id %><br>Name:<%= item.name%></td>
+            <td><%=bd %><br><%= item.gender %></td>
+            <td><%= item.address%><br><%= item.cname %><br><%= item.sname %></td>
+            <td>Email:<%= item.email %><br>Mobile No: <%= item.mobile %></td>
+            <td><a href='displayById?eid=<%= item.id %>'>Edit/Delete Record</a></td>
+        </tr>
+        <% }) %>
+    </table>
+</center>
+</html>

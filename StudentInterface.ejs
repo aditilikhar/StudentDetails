@@ -1,0 +1,149 @@
+
+
+
+ <style type='text/css'>
+    .main{
+    
+     display:flex;
+     justify-content:center;
+     align-items:center;
+    }
+    .sub{
+    
+     width:50%;
+     padding:3%;
+     
+    
+    }
+    
+    .txtdiv{
+    text-align:center;
+     background-color:#4e73df;
+     border-radius:10px;
+     width:60%;
+    
+     font-weight: 600;
+     padding:3px;
+    
+    }
+    .txt{color:#FFFFFF;
+         font-size:23px;
+    
+    }
+    .button {
+      background-color: #4e73df;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+    font-weight: 600;
+      cursor: pointer;
+      border-radius:10px;
+    }
+    .inputext{
+    font-size:15px;
+    }
+    </style>
+    
+    <html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src='/javascripts/jquery-3.4.1.min.js'></script>
+    <script src='/javascripts/project.js'></script>
+    <div class="container main">
+    <div class="sub">
+
+
+    <caption><h2>Student Details</h2></caption>
+    <form action='addnewrecord' method='post' enctype='multipart/form-data'>
+        <table>
+       
+        <tr>
+            <td><b><i>ID: </i></b></td>
+            <td>
+                <input type='text' name='eid' class='form-control' required>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Name: </i></b></td>
+            <td>
+                <input type='text' name='fname' placeholder='First Name' class='form-control' required>
+                <input type='text' name='lname' placeholder='Last Name' class='form-control' required>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Birth Date: </i></b></td>
+            <td>
+                <input type='date' name='cdob' class='form-control' required>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Gender: </i></b></td>
+            <td>
+                <input type='radio' name='cgender' value="Male" >Male
+                <input type='radio' name='cgender' value="Female">Female
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Address: </i></b></td>
+            <td>
+                <textarea rows=3 cols=15 name='caddress' class='form-control' required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>State: </i></b></td>
+            <td>
+                <select id='cstate' name='cstate' class='form-control' required>
+                    <option>-States-</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>City: </i></b></td>
+            <td>
+                <select id='ccity' name='ccity' class='form-control' required></select>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Email: </i></b></td>
+            <td>
+                <input type='email' name='cemail' class='form-control' required>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Mobile: </i></b></td>
+            <td>
+                <input type='text' name='cmobile' class='form-control' required>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Password: </i></b></td>
+            <td>
+                <input type='password' name='cpwd' class='form-control' required>
+            </td>
+        </tr>
+        <tr>
+            <td><b><i>Picture: </i></b></td>
+            <td>
+                <input type='file' name='cpicture' class='form-control' required>
+            </td>
+        </tr>
+       
+                   
+    </table>
+   
+        <input type='submit' value='Submit' class='button' >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <input type='submit' value='Reset' class='button' >
+    </form> 
+    <h1><%=msg %></h1>
+    
+
